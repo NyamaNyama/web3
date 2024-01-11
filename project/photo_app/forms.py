@@ -26,7 +26,13 @@ class ImageForm(forms.ModelForm):
             image.save()
         return image
 
+class TagForm(forms.ModelForm):
+    class Meta:
+        model = Tag
+        fields = ['name']
 
+class AddTagForm(forms.ModelForm):
+    new_tag = forms.CharField(required=False)
 
     class Meta:
         model = Tag
